@@ -58,96 +58,209 @@
                         echo "<p class=\"alert alert-success w-75 mx-auto text-center\">Les deux conditions sont respectées.<p>";
                     }
                     ?>
+
+
+                    <div class="col-sm-12 col-md-4" id="ifElse">
+                        <h3 class="texte-center">2- If...Else</h3>
+                        <p>L'instructions <code>if...Else</code> permet de traiter le cas ou l'expression conditionelle est TRUE et en meme temps d'écrire un traitement de rechange quand elle est evaluée à FALSE, ce qui ne permet pas une instruction if seul.
+                            L'instruction ou le bloc qui suit <code>else</code> est alors le seule a étre execute.
+                    </div>
+                    <?php
+                    if ($a > $b) {
+                        echo "<p class=\"alert alert-success w-75 mx-auto text-center\">$a est supérieur à $b.</p>";
+                    } else {
+                        echo "<p class=\"alert alert-success w-75 mx-auto text-center\">$b est supérieur à $a.</p>";
+                    }
+                    ?>
+                    <p>Le bloc qui suit les instruction if ou else peut contenir toutes sortes d'instructions,
+                        y compris d'autres instructions if ...else.
+                        Nous obtenons,dans ce cas , une syntaxe plus compléte. </p>
                 </div>
 
-                <div class="col-sm-12 col-md-4" id="ifElse">
-                    <h3 class="texte-center">2- If...Else</h3>
-                    <p>L'instructions <code>if...Else</code> permet de traiter le cas ou l'expression conditionelle est TRUE et en meme temps d'écrire un traitement de rechange quand elle est evaluée à FALSE, ce qui ne permet pas une instruction if seul.
-                        L'instruction ou le bloc qui suit <code>else</code> est alors le seule a étre execute.
+                <div class="col-sm-12 col-md-4" id="ifElseIf">
+                    <h3 class="texte-center">3- If...Else if...else</h3>
+                    <p>Nous aurons ici une syntaxe un peut plus compliqué de la forme suivante : <code>if (condition){} Else if(condition){} else {}</code> </p>
+                    <p>Ici notre variable d est égale a 8 . On teste différentes conditions pour voir laquelle est vraie grace a un <code>if...else if...else</code>
+                        Ici la premiere condition est vraie </p>
+                    <?php
+                    echo "<p class=\"alert alert-success w-75 mx-auto text-center\">";
+                    if ($d == 8) {
+                        echo "Réponse 1 : \$d = 8";
+                    } else if ($d != 10) {
+                        echo "Réponse 2 : \$d est différent de 10";
+                    } else {
+                        echo "Réponse 3 : Les conditions précedents sont fausses.";
+                    }
+                    echo "</p>";
+                    ?>
+                    <?php
+                    $e = 10;
+                    $f = 5;
+                    $g = 2;
+                    echo "<p class\"alert alert-success w-75 mx-auto texte-center\">";
+                    if ($e == 9 || $f > $g) {
+                        echo "Au moins une des deux conditions est remplie.";
+                    } else {
+                        echo "Les deux conditions sont fausses.";
+                    }
+                    echo "</p>";
+                    ?>
                 </div>
-                <?php
-                if ($a > $b) {
-                    echo "<p class=\"alert alert-success w-75 mx-auto text-center\">$a est supérieur à $b.</p>";
-                } else {
-                    echo "<p class=\"alert alert-success w-75 mx-auto text-center\">$b est supérieur à $a.</p>";
-                }
-                ?>
-                <p>Le bloc qui suit les instruction if ou else peut contenir toutes sortes d'instructions,
-                    y compris d'autres instructions if ...else.
-                    Nous obtenons,dans ce cas , une syntaxe plus compléte. </p>
-        </div>
+                <!-- fin de la colonne -->
+                <div class="col-sm-12 col-md-6">
+                    <h3 class="text-center" id="ternaire">4- La méthode ternaire</h3>
+                    <p>Il existe d'autre façon d'écrire un if else : la méthode ternaire.
+                        Avec cette méthode, le code sera le suivant : <code>(condition) ? code a éxecuter si la
+                            conditionretoune TRUE / code à retourner si le code renvoie FALSE</code>
+                    </p>
+                    <?php
+                    // en ternaire
+                    $h = 10;
+                    echo ($h == 10) ? "<p class=\"alert alert-success w-75 mx-auto text-center\">\$h est égal à 10.</p>" :
+                        "<p class=\"alert alert-success w-75 mx-auto text-center\">\$h est différent de 10.</p>";
+                    ?>
+                </div>
+                <!-- fin de la colonne -->
+                <div class="col-sm-12 col-md-6">
+                    <h3 class="text-center" id="switch">5- Switch et Case</h3>
+                    <p>Swtich permet de comparer à une multitude de valeurs, comme l'instruction <code>if ..else if...else</code></p>
 
-        <div class="col-sm-12 col-md-4" id="ifElseIf">
-            <h3 class="texte-center">3- If...Else if...else</h3>
-            <p>Nous aurons ici une syntaxe un peut plus compliqué de la forme suivante : <code>if (condition){} Else if(condition){} else {}</code> </p>
-            <p>Ici notre variable d est égale a 8 . On teste différentes conditions pour voir laquelle est vraie grace a un <code>if...else if...else</code>
-                Ici la premiere condition est vraie </p>
-            <?php
-            echo "<p class=\"alert alert-success w-75 mx-auto text-center\">";
-            if ($d == 8) {
-                echo "Réponse 1 : \$d = 8";
-            } else if ($d != 10) {
-                echo "Réponse 2 : \$d est différent de 10";
-            } else {
-                echo "Réponse 3 : Les conditions précedents sont fausses.";
-            }
-            echo "</p>";
-            ?>
-            <?php
-            $e = 10;
-            $f = 5;
-            $g = 2;
-            echo "<p class\"alert alert-success w-75 mx-auto texte-center\">";
-            if ($e == 9 || $f > $g) {
-                echo "Au moins une des deux conditions est remplie.";
-            } else {
-                echo "Les deux conditions sont fausses.";
-            }
-            echo "</p>";
-            ?>
-        </div>
-        <!-- fin de la colonne -->
-        <div class="col-sm-12 col-md-6">
-            <h3 class="text-center" id="ternaire">4- La méthode ternaire</h3>
-            <p>Il existe d'autre façon d'écrire un if else : la méthode ternaire.
-                Avec cette méthode, le code sera le suivant : <code>(condition) ? code a éxecuter si la
-                    conditionretoune TRUE / code à retourner si le code renvoie FALSE</code>
-            </p>
-            <?php
-            // en ternaire
-            echo ($h == 10) ? "<p class=\"alert alert-success w-75 mx-auto text-center\">\$h est égal à 10.</p>" :
-                "<p class=\"alert alert-success w-75 mx-auto text-center\">\$h est différent de 10.</p>"
-            ?>
-        </div>
-        <!-- fin de la colonne -->
-        <div class="col-sm-12 col-md-6">
-            <h3 class="text-center" id="switch">4- Switch et Case</h3>
-            <p>Swtich permet de comparer à une multitude de valeurs, comme l'instruction <code>if ..else if...else</code></p>
+                    <?php
+                    echo  "<p class=\"alert alert-success w-75 mx-auto text-center\">";
+                    $dept = 100;
+                    switch ($dept) {
+                        case 75:
+                            echo "Paris";
+                            break;
+                        case 41:
+                            echo "loir-et-cher";
+                            break;
+                        case 91:
+                            echo "Essonne";
+                            break;
+                        default:
+                            echo "Département inconnu !!! Revoyer vos cours de Géo";
+                            break;
+                    }
+                    echo "</p>";
 
-            <?php
-            echo  "<p class=\"alert alert-success w-75 mx-auto text-center\">";
-            $dept = 100;
-            switch ($dept) {
-                case 75:
-                echo "Paris";
-                break;
-                case 41:
-                echo "loir-et-cher";
-                break;
-                case 91:
-                echo"Essonne";
-                break;
-                default:
-                echo "Département inconnu !!! Revoyer vos cours de Géo";
-                break;
-            }
-            echo "</p>";
+                    ?>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12" id="while">
+                        <h2 class="text-center"><u>2- Les Boucles</u></h2>
+                        <p>Les boucles permettent de répéter des opérations élémentaires un grand nombre de fois sans avoir à réécrire le meme code</p>
+                    </div>
+                    <div class="col-sn-12 col-md-6">
+                        <h3 class="text-center">1 - Boucle While</h3>
+                        <p>La boucle <code>While</code> permet d'affiner le compportement d'une
+                            boucle en réalisant une action de maniere répétitive tant qu'une condition est vérifiée ou
+                            qu'une expression quelconque est évaluée à TRUE et dons de l'arréter quand elle n'est plus vérifiée,
+                            évaluée à FALSE</p>
+                        <div class="alert alert-success w-75 mx-auto text-center">
+                            <?php
+                            $n = 1;
+                            while ($n % 7 != 0) {
+                                //   le script continue jusqu'a trouvé un multiple de 7
+                                $n = rand(1, 100);
+                                //  rand fait un tirage de nombres aléatoires compris entre 1 et 100 rand() pour random
+                                echo $n . "&nbsp; - ";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="col-sn-12 col-md-6">
+                        <h3 class="text-center">2- Boucle do ... While</h3>
+                        <p>Avec l'instruction <code>do...While</code>, la condition n'est évaluée qu'aprés une premiere execution
+                            des instructions du bloc compris entre do et while</p>
+                        <div class="alert alert-success w-75 mx-auto text-center">
+                            <?php
+                            $n2 = 1;
+                            do {
+                                $n2 = rand(1, 100);
+                                //  rand fait un tirage de nombres aléatoires compris entre 1 et 100 rand() pour random
+                                echo $n2 . "&nbsp; * ";
+                            } while ($n2 % 7 != 0);
+                            //   le scripte s'arréte lorsque 
+                            ?>
+                        </div>
+                    </div>
+                    <div class="col-sn-12 col-md-6">
+                        <h3 class="text-center">3- Boucle for</h3>
+                        <p>La boucle <code>For</code> est plus conscise, ramassée que la boucle <code>while</code>.
+                            Elle s'écrit ainsi:
+                            <code>for(initialisation ; condition ; incrémentation){ code à éxécuter }</code>
+                        </p>
+                        <div class="alert alert-success w-75 mx-auto text-center">
+                            <?php
+                            //   on va afficher les puissances de 2 jusqu'à 8 
+                            for ($i = 0; $i <= 8; $i++) {
+                                $tab[$i] = pow(2, $i);
+                                // à l'aide d'une boucle et de la fonction pow() 
+                                // Création d'un tableau avec 9 éléments
+                            }
+                            var_dump($tab)
 
-            ?>
+                            ?>
+                        </div>
+                    </div>
+                    <div class="col-sn-12 col-md-6">
+                        <h3 class="text-center">4- Boucle foreach</h3>
+                        <p>La boucle <code>foreach</code> (pour chaque passage) , est efficace pour afficher et lister
+                            les éléments contenus dans un tableu</p>
+                        <div class="alert alert-success w-75 mx-auto text-center">
+                            <?php
+                            $val = "Une valeur";
+                            echo "Les puissances de 2 sont : ";
+                            foreach ($tab as $val) {
+                                echo $val . "-";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <!-- fin de la colonne -->
+                    <div class="col-sm-12">
+                        <p class="alert alert-danger w-50 mx-auto text-center"> Lecture des indices et des valeurs d'un tableu : <br>
+                        <?php
+                        // création d'un autre tableu avec la boucle for 
+                        for($i = 0; $i <=8; $i++){
+                            $tableau[$i] = pow(2,$i);
+                        }
+                        // lecture des indices et des valeurs di tableau 
+                        foreach ($tableau as $ind=>$valeur) {
+                            echo "2 puissance $ind vaut $valeur <br>";
+                        }
+                        echo " le dernier indices est $ind et la derniere valeur est $valeur .";
+                        ?>
+                    </p>
+                    </div>
+                    <!-- fin de la colonne -->
+                </div>
+                <!-- fin de la rangée (row) -->
+                <hr>
+                <br><br>
         </div>
-
+         <!-- fin de la partie principale cole 8 -->
         </main>
+        <div class="col-sm-2 aside ">
+        <ul>
+            <li><a href="#conditions">Les conditions</a>
+                <ul>
+                    <li><a href="#if">if</a></li>
+                    <li><a href="#ifElse">ifElse</a></li>
+                    <li><a href="#ifElseIfElse">ifElseIfElse</a></li>
+                    <li><a href="#ternaire">ternaire</a></li>
+                    <li><a href="#switch">switch</a></li>
+                </ul>
+            </li>
+            <li><a href="#while">Les boucles</a></li>
+        </ul>
     </div>
+      
+    </div>
+ 
+    
 
     </div>
     <!-- FIN DU CONTENU PRINCIPAL -->
