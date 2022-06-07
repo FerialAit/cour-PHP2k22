@@ -48,55 +48,106 @@
                             Présente dans tous les langage de programation, elle est essentielles puisqu'elle permet d'orienter l'éxécution du script en fonction
                             de la valeur booléenne d'une espression</p>
                     </div>
-                        <?php
-                        $a = 100;
-                        $b = 55;
-                        $c = 25;
-                        $d = 8;
-
-                        if ($a > $b && $b > $c) {
-                            echo "<p class=\"alert alert-success w-75 mx-auto text-center\">Les deux conditions sont respectées.<p>";
-                        }
-                        ?>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4" id="ifElse">
-                        <h3 class="texte-center">2- If...Else</h3>
-                        <p>L'instructions <code>if...Else</code> permet de traiter le cas ou l'expression conditionelle est TRUE et en meme temps d'écrire un traitement de rechange quand elle est evaluée à FALSE, ce qui ne permet pas une instruction if seul.
-                         L'instruction ou le bloc qui suit <code>else</code> est alors le seule a étre execute.
-                         L'execution continue alors ensuite normalement apres le bloc </p>
-                    </div>
-                        <?php
-                        if ($a > $b) {
-                            echo "<p class=\"alert alert-success w-75 mx-auto text-center\">$a est supérieur à $b.</p>";
-                        } else {
-                            echo "<p class=\"alert alert-success w-75 mx-auto text-center\">$b est supérieur à $a.</p>";
-                        }
-                        ?>
-                        <p>Le bloc qui suit les instruction if ou else peut contenir toutes sortes d'instructions,
-                           y compris d'autres instructions if ...else.
-                           Nous obtenons,dans ce cas , une syntaxe plus compléte. </p>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4" id="ifElseIf">
-                        <h3 class="texte-center">3- If...Else  if...else</h3>
-                        <p>Nous aurons ici une syntaxe un peut plus compliqué de la forme suivante : <code>if (condition){} Else if(condition){} else {}</code> </p>
-                        <p>Ici notre variable d est égale a 8 . On teste différentes conditions pour voir laquelle est vraie grace a un <code>if...else if...else</code>
-                    Ici la premiere condition est vraie </p>
                     <?php
-                    echo "<p class=\"alert alert-success w-75 mx-auto text-center\">";
-                    if($d == 8){
-                        echo "Réponse 1 : \$d = 8";
-                    }else if($d != 10){
-                        echo "Réponse 2 : \$d est différent de 10";
-                    }else{
-                       echo "Réponse 3 : Les conditions précedents sont fausses.";
+                    $a = 100;
+                    $b = 55;
+                    $c = 25;
+                    $d = 8;
+
+                    if ($a > $b && $b > $c) {
+                        echo "<p class=\"alert alert-success w-75 mx-auto text-center\">Les deux conditions sont respectées.<p>";
                     }
                     ?>
-                    </div> 
-                    
-            </main>
+                </div>
+
+                <div class="col-sm-12 col-md-4" id="ifElse">
+                    <h3 class="texte-center">2- If...Else</h3>
+                    <p>L'instructions <code>if...Else</code> permet de traiter le cas ou l'expression conditionelle est TRUE et en meme temps d'écrire un traitement de rechange quand elle est evaluée à FALSE, ce qui ne permet pas une instruction if seul.
+                        L'instruction ou le bloc qui suit <code>else</code> est alors le seule a étre execute.
+                </div>
+                <?php
+                if ($a > $b) {
+                    echo "<p class=\"alert alert-success w-75 mx-auto text-center\">$a est supérieur à $b.</p>";
+                } else {
+                    echo "<p class=\"alert alert-success w-75 mx-auto text-center\">$b est supérieur à $a.</p>";
+                }
+                ?>
+                <p>Le bloc qui suit les instruction if ou else peut contenir toutes sortes d'instructions,
+                    y compris d'autres instructions if ...else.
+                    Nous obtenons,dans ce cas , une syntaxe plus compléte. </p>
         </div>
+
+        <div class="col-sm-12 col-md-4" id="ifElseIf">
+            <h3 class="texte-center">3- If...Else if...else</h3>
+            <p>Nous aurons ici une syntaxe un peut plus compliqué de la forme suivante : <code>if (condition){} Else if(condition){} else {}</code> </p>
+            <p>Ici notre variable d est égale a 8 . On teste différentes conditions pour voir laquelle est vraie grace a un <code>if...else if...else</code>
+                Ici la premiere condition est vraie </p>
+            <?php
+            echo "<p class=\"alert alert-success w-75 mx-auto text-center\">";
+            if ($d == 8) {
+                echo "Réponse 1 : \$d = 8";
+            } else if ($d != 10) {
+                echo "Réponse 2 : \$d est différent de 10";
+            } else {
+                echo "Réponse 3 : Les conditions précedents sont fausses.";
+            }
+            echo "</p>";
+            ?>
+            <?php
+            $e = 10;
+            $f = 5;
+            $g = 2;
+            echo "<p class\"alert alert-success w-75 mx-auto texte-center\">";
+            if ($e == 9 || $f > $g) {
+                echo "Au moins une des deux conditions est remplie.";
+            } else {
+                echo "Les deux conditions sont fausses.";
+            }
+            echo "</p>";
+            ?>
+        </div>
+        <!-- fin de la colonne -->
+        <div class="col-sm-12 col-md-6">
+            <h3 class="text-center" id="ternaire">4- La méthode ternaire</h3>
+            <p>Il existe d'autre façon d'écrire un if else : la méthode ternaire.
+                Avec cette méthode, le code sera le suivant : <code>(condition) ? code a éxecuter si la
+                    conditionretoune TRUE / code à retourner si le code renvoie FALSE</code>
+            </p>
+            <?php
+            // en ternaire
+            echo ($h == 10) ? "<p class=\"alert alert-success w-75 mx-auto text-center\">\$h est égal à 10.</p>" :
+                "<p class=\"alert alert-success w-75 mx-auto text-center\">\$h est différent de 10.</p>"
+            ?>
+        </div>
+        <!-- fin de la colonne -->
+        <div class="col-sm-12 col-md-6">
+            <h3 class="text-center" id="switch">4- Switch et Case</h3>
+            <p>Swtich permet de comparer à une multitude de valeurs, comme l'instruction <code>if ..else if...else</code></p>
+
+            <?php
+            echo  "<p class=\"alert alert-success w-75 mx-auto text-center\">";
+            $dept = 100;
+            switch ($dept) {
+                case 75:
+                echo "Paris";
+                break;
+                case 41:
+                echo "loir-et-cher";
+                break;
+                case 91:
+                echo"Essonne";
+                break;
+                default:
+                echo "Département inconnu !!! Revoyer vos cours de Géo";
+                break;
+            }
+            echo "</p>";
+
+            ?>
+        </div>
+
+        </main>
+    </div>
 
     </div>
     <!-- FIN DU CONTENU PRINCIPAL -->
