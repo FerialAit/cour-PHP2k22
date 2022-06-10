@@ -37,9 +37,6 @@
         <!-- ============================================================== -->
         <div class="col-sm-8">
             <main class="container-fluid">
-                <!-- BOUTON DE LA NAV -->
-            
-
                 <div class="row">
                     <hr>
                     <h2 class="col-sm-12 text-center" id="definition">1 - Tableau créé par la variable $_GET[]</h2>
@@ -76,15 +73,15 @@
             </main>
         </div> <!-- FIN DE LA PARTIE PRINCIPALE COL-8 -->
 
-        <!-- <div class="col-sm-2 aside">
+        <div class="col-sm-2 aside">
             <ul>
-                DES ANCRES POUR LE COURS ET LES EXOS
+                <!-- DES ANCRES POUR LE COURS ET LES EXOS -->
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
                 <li></li>
             </ul>
-        </div> -->
+        </div>
     </div>
 
     <!-- LE FOOTER EN REQUIRE -->
