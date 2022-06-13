@@ -1,20 +1,10 @@
 <?php
 require_once('../inc/functions.php');
 
-//Si une langue est passée dans l'URL (l'internaute a cliqué sur un lien), on enverra cette langue dans le cookie
-if(isset($_GET['langue'])){
-    $langue =($_GET['langue ']);
-    // jeprint_r($langue);
-
-}else if(isset($_COOKIE['langue'])){
-    $langue = ($ç_COOKIE['langue']);
-    jeprint_r($langue);
-}else{
-    $langue ='fr';
-}
+session_start(); //permet de céer un fichier de session avec son id ou ouvrir la session si l(id exite déja ou si on a )
 ?>
 <!doctype html>
-<html lang="fr">
+<html langue="fr">
 
 <head>
     <!-- Required meta tags -->
@@ -28,7 +18,7 @@ if(isset($_GET['langue'])){
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
 
-    <title>Cours PHP7 - PDO</title>
+    <title>Cours PHP7 - $_COOKIE</title>
 
     <!-- mes styles -->
     <link rel="stylesheet" href="../css/style.css">
@@ -37,8 +27,9 @@ if(isset($_GET['langue'])){
 <body class="bg-light">
     <!-- JUMBOTRON -->
     <div class="jumbotron bg-dark text-white text-center">
-        <h1 class="display-3">Cours PHP7 - PDO</h1>
-        <p class="lead">La variable "$pdo" est un objet qui représente la connexion à une BDD</p>
+        <h1 class="display-3">Cours PHP7 - La variable $_SESSION</h1>
+        <p class="lead">La méthode POST rtécéptionne les données d'un formulaire, $_POST est une superglobale  </p>
+
 
 
     </div>
@@ -61,9 +52,18 @@ if(isset($_GET['langue'])){
                     <hr>
                     <h2 class="col-sm-12 text-center" id="definition">1. Introduction</h2>
                     <div class="col-sm-12">
+                        <p>Les données du fichier de session sont accessible et manipulables a partir de la superglobale $_SESSION  </p>
+                        <?php
+                        $_SESSION['pseudo'] = 'Ohfefe';
+                        $_SESSION['mdp'] = 'ak45';
+                        $_SESSION['email'] = 'Ohfefe94@gmail.com';
 
-                    </div>
-                 </div>
+                        echo "<p class=\"alert alert-success\">La session est bien remplie ! </p> ";
+                        jevar_dump($_SESSION).
+                        ?>
+                        
+                    </div><!-- fin de la col-->
+                 </div><!-- fin de la row-->
                 <hr>
                 <br><br>
 
