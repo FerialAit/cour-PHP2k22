@@ -28,7 +28,7 @@ session_start(); //permet de céer un fichier de session avec son id ou ouvrir l
     <!-- JUMBOTRON -->
     <div class="jumbotron bg-dark text-white text-center">
         <h1 class="display-3">Cours PHP7 - La variable $_SESSION</h1>
-        <p class="lead">La méthode POST rtécéptionne les données d'un formulaire, $_POST est une superglobale  </p>
+        <p class="lead">Une session est systéme mis en oeuvre dans le code PHP permettant de conserver  </p>
 
 
 
@@ -59,9 +59,44 @@ session_start(); //permet de céer un fichier de session avec son id ou ouvrir l
                         $_SESSION['email'] = 'Ohfefe94@gmail.com';
 
                         echo "<p class=\"alert alert-success\">La session est bien remplie ! </p> ";
-                        jevar_dump($_SESSION).
+                        // jevar_dump($_SESSION);
                         ?>
+                        <p>Principe de session : un fichier temporaire appelé session
+                            est crée sur le serveur, avec un id unique. Cette session est lié à un internaute dans le même
+                            temps avec un cookies est déposé sur le POST de l'internaute avec l'id . (au nom PHPSESSID) . Ce cookie est détruit 
+                            lorque l'on quitte le navigateur.
+                        </p>
+                        <p>Le fichier de session peut contenir des informations très sensibles!!!! Il n'est donc pas accessible par l'internaute </p>
+                        <p>Il est possible de vider une partie de la session avec le code suivant <code>unset($_SESSION['mdp']);</code></p>
                         
+                        <?php
+                        unset($_SESSION['mdp']);
+                        // jeprint_r($_SESSION);
+                        ?>
+                        <p>Pour suprimer automatiquement une session : 
+                            <code>session_destroy();</code> il supprime totalement la session ainsi que son fichier temporaire.
+                        </p>
+                        <?php
+                    //   session_destroy();
+                    //   jeprint_r($_SESSION);
+                        ?>
+
+                        <p>Nous avans effectué un session_destroy() mais il n'est exécuté qu'à la fin de notre script. 
+                            Nous voyons encore ici le contenu se la session mais le fichier temporaire dans le dossier Temp a bien été supprimé .
+                            Ce fichier contient les infos de session et elles sont accessibles à
+                            <code>session_start()</code> 
+                        </p>
+                        <p>Si on a besoin  des information de cette page, le code <code>session_start()</code> devra être placé au début de la page.</p>
+
+                        <?php
+                        if(isset($_SESSION['pseudo'])){
+                            echo"Votre pseudo est :" . $_SESSION['pseudo']. "<br>";
+                        }
+                        else{
+                            echo'<from method=" post "action=""><label for="pseudo">Pseudo</label><br><input type="text" name="pseudo"value=""><br>
+                            <inpute type="submit"value="Envoyer"></from>';
+                        }
+                        ?>
                     </div><!-- fin de la col-->
                  </div><!-- fin de la row-->
                 <hr>
