@@ -4,7 +4,13 @@ require_once('../inc/functions.php');
 //Si une langue est passée dans l'URL (l'internaute a cliqué sur un lien), on enverra cette langue dans le cookie
 if(isset($_GET['langue'])){
     $langue =($_GET['langue ']);
+    // jeprint_r($langue);
+
+}else if(isset($_COOKIE['langue'])){
+    $langue = ($ç_COOKIE['langue']);
     jeprint_r($langue);
+}else{
+    $langue ='fr';
 }
 ?>
 <!doctype html>
