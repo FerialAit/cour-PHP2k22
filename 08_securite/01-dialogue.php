@@ -28,7 +28,7 @@
     </div>
 
     <!-- RANGÉE PRINCIPALE -->
-    <div class="row">
+    <div class="row bg-white">
         <!-- LA NAVIGATION EN INCLUDE (penser à ajouter le JS qui va avec en fin de page) -->
         <?php
         require('../inc/sidenav.inc.php')
@@ -37,8 +37,8 @@
         <!-- ============================================================== -->
         <!-- Contenu principal -->
         <!-- ============================================================== -->
-        <div class="col-sm-8">
-            <main class="container-fluid">
+        <div class="col-sm-8 ">
+            <main class="container-fluid ">
                 
                 <div class="row">
                     <hr>
@@ -83,13 +83,46 @@
                                 PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
                                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
                             ));
-                            $requete = $pdoDialogue->query( " SELECT * FROM commentaire WHERE pseudo = 'ohfefe' " );
+                            $requete = $pdoDialogue->query( " SELECT * FROM commentaire WHERE pseudo = 'Ohféfe94' " );
                             $ligne = $requete->fetch( PDO::FETCH_ASSOC );
-                            echo "<ul class=\"alert alert-success\"><li>ID :" .$ligne['id_commentaire']. "</li><li>Pseudo : " .$ligne['pseudo']. "</li><li>Message : " .$ligne['message']. "</li>";
+                            echo "<ul class=\"alert alert-secondary\"><li>ID :" .$ligne['id_commentaire']. "</li><li>Pseudo : " .$ligne['pseudo']. "</li><li>Message : " .$ligne['message']. "</li>";
                         ?> 
                     </div><!-- fin de la colonne -->
 
                 </div><!-- fin de la rangée -->
+                
+                <hr>
+                
+                <div class="row">
+                    <h2 class="col-sm-12 text-center" id="">2 - Exercice</h2>
+                    <div class="col-sm-12">
+                        <p>Compter les commentaires de la base de donnée "dialogue" et les afficher dans un tableau </p>
+                        <div class="alert alert-secondary">
+                            <?php 
+                                $requete = $pdoDialogue->query("SELECT * FROM commentaire");
+                                $nbr_commentaires = $requete->rowCount();
+                            
+                                echo "<p>Il y a " .$nbr_commentaires. "  commentaires dans ma base de donnée.</p>";
+                            
+                                echo "<table class=\"table table-striped\">";
+                                echo "<thead><tr><th scope=\"col\">ID</th><th scope=\"col\">Pseudo</th><th scope=\"col\">Message</th><th scope=\"col\">Date d'enregistrement</th></thead>";
+                                while($ligne = $requete->fetch(PDO::FETCH_ASSOC)) {
+                            
+                                    echo "<tr>";
+                                    echo "<td>#". $ligne['id_commentaire']. "</td>";   
+                                    echo "<td>". $ligne['pseudo']. "</td>";
+                                    echo "<td>". $ligne['message']. "</td>";
+                                    echo "<td>" . strftime('%d/%m/%Y', strtotime($ligne['date_enregistrement'])). " </td>";
+                                    
+                                    echo "</tr>";
+                                }
+                            
+                                echo "</table>";
+                            ?> 
+                        </div>
+                    </div><!-- fin de la colonne -->
+
+                </div>
 
             
     </div>
