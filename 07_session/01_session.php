@@ -77,6 +77,7 @@ session_start(); //permet de céer un fichier de session avec son id ou ouvrir l
                             <code>session_destroy();</code> il supprime totalement la session ainsi que son fichier temporaire.
                         </p>
                         <?php
+                        
                     //   session_destroy();
                     //   jeprint_r($_SESSION);
                         ?>
