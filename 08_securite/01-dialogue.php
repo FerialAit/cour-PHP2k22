@@ -112,7 +112,7 @@
                                     echo "<td>#". $ligne['id_commentaire']. "</td>";   
                                     echo "<td>". $ligne['pseudo']. "</td>";
                                     echo "<td>". $ligne['message']. "</td>";
-                                    echo "<td>" . strftime('%d/%m/%Y', strtotime($ligne['date_enregistrement'])). " </td>";
+                                    echo "<td>" . ($ligne['date_enregistrement']). " </td>";
                                     echo "</tr>";
                                 }
                             
